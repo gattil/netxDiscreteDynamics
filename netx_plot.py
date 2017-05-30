@@ -33,7 +33,7 @@ Attributes:
 
 # Import section (built-in modules|third-party modules)
 import matplotlib
-matplotlib.use('TkAgg')
+matplotlib.use('agg')
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import numpy as np
@@ -95,5 +95,3 @@ def plot_population_dynamics(G, object='ts', outputfilename=''):
         fig.savefig(outputfilename)
     else:
         fig.show()
-
-
