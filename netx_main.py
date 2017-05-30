@@ -88,7 +88,7 @@ def main(args):
                            edge_file=args.input_edge_file,
                            node_file=args.input_node_file)
 
-    with progressbar.ProgressBar(max_value=periods) as bar:
+    with progressbar.ProgressBar(max_value=periods*experiments) as bar:
         for e in range(experiments):
             for i in range(1, periods+1):
                 # Increase the population at fixed intervals:
@@ -161,7 +161,7 @@ def main(args):
                     data[k] = list()
                 data[k].append(d[k])
 
-            bar.update(e)
+            bar.update(e*i)
 
     st = datetime.datetime.fromtimestamp(time.time()).strftime('%Y_%m_%d_%H_%M_%S')
 
